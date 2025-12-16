@@ -4,7 +4,7 @@ import sys
 from loguru import logger
 
 from src.common import db
-from app.bot import start_bot
+from src.bot import start_bot
 
 
 logger.remove()  # убираем стандартный sink
