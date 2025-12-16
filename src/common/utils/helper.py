@@ -2,7 +2,7 @@ from aiogram import Bot, Dispatcher
 from aiogram.client.bot import DefaultBotProperties
 
 from ..config.settings import settings
-from app.db import Database
+from src.db import Database
 
 # Инициализация подключения к базе данных
 db = Database(db_url=settings.database.URL)
