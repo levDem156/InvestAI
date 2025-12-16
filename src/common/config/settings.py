@@ -33,10 +33,20 @@ class DatabaseSettings(EnvBase):
     )
 
 
+class TinkoffInvestSettings(EnvBase):
+    """Настройки Tinkoff Invest API"""
+    TOKEN: SecretStr = Field(..., description="Токен для Tinkoff Invest API")
+    
+    model_config = SettingsConfigDict(
+        env_prefix = "TI_"
+    )
+
+
 class Settings(BaseSettings):
     """Центральный класс для всех настроек"""
     telegram: TelegramSettings = Field(default_factory=TelegramSettings)
     database: DatabaseSettings = Field(default_factory=DatabaseSettings)
+    tinkoff: TinkoffInvestSettings = Field(default_factory=TinkoffInvestSettings)
     
     @classmethod
     def load(cls) -> "Settings":
