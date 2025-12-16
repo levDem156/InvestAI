@@ -4,7 +4,6 @@ from loguru import logger
 
 from .base import Base
 from ..repositories import UserRepository
-from ..schemas import Schemas
 
 
 class Database:
